@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Karla');
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Karla', sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
+
+.description strong {
+  color: black;
+}
+
+
+.playerContainer {
+  width: 500px;
+  height: 500px;
+}
+
+.player {
+  width: 100%;
+  height: 100%;
+}
+
+p {
+  margin: 4px 0px;
+}
+
+br {
+  color: black;
+}
+
+#videoDiv {
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
+  height: 100px; 
+  /* height: 100% */
+  /* z-index: -100; */
+  border: 2px solid green;
+}
+
+#video {
+  width:100%;
+  height:100%;
+}

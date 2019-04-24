@@ -1,0 +1,23 @@
+Description::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  background-color: #FFF;
+  background-image: -webkit-linear-gradient(top,
+  #e4f5fc 0%,
+  #bfe8f9 50%,
+  #9fd8ef 51%,
+  #2ab0ed 100%);
+}
+Description::-webkit-scrollbar-track {
+border-radius: 0px;
+background-color: transparent;
+}
+Description::-webkit-scrollbar:horizontal {
+height: 12px;
+}
+Description::-webkit-scrollbar:vertical {
+width: 10px;
+}
+Description::-webkit-scrollbar {
+-webkit-appearance: none;
+}

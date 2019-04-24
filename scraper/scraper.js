@@ -63,7 +63,7 @@ https://blog.bitsrc.io/web-scraping-with-puppeteer-e73e5fee7474
     await browser.close();
 
     // Write the data to a JSON file
-    fs.writeFile("jobs.json", JSON.stringify(data), err => {
+    fs.writeFile("./data/jobs.json", JSON.stringify(data), err => {
       if (err) {
         throw err;
       }

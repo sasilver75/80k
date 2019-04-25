@@ -28,7 +28,7 @@ const Container = styled.div`
   box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.75);
   box-shadow: 8px 8px 16px rgba(50,50,93,.3), 0 2px 6px rgba(0,0,0,.22);
   transition: all .15s ease;
-
+  border-radius: 5px;
   margin: 15px 5px;
 
   &:hover {
@@ -57,8 +57,6 @@ const OrgImg = styled.img`
   border-right: 1px solid rgba(0,0,0,.4);
   border-bottom: 1px solid rgba(0,0,0,.4);
   box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
-
-
 `
 
 const Description = styled.div`
@@ -181,6 +179,7 @@ const PitchCard = styled.div`
   border-bottom: 1px solid rgba(0,0,0,.4);
   box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.75);
   padding: 10px;
+  border-radius: 10px;
 `
 
 export default ({ data }) => {
@@ -198,6 +197,15 @@ export default ({ data }) => {
         videoSrcURL='https://player.vimeo.com/video/290952236?title=0&byline=0&portrait=0&sidedock=0&autoplay=1&loop=1'
         videoTitle="Orbit"
       />
+      <p id="hoverText">
+        <p>
+          The Future needs Your Help.
+        </p>
+        <p>
+          Spend your Career working on the World's most Pressing Problems.
+        </p>
+      </p>
+
       <div id="pitchCardContainer">
         <PitchCard id="pitchCard" >
           <h1>The Future Matters More Than Anything Else</h1>

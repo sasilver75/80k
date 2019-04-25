@@ -13,6 +13,20 @@ body {
   background: #F5FBFC;
 }
 
+#hoverText {
+  color: white;
+  z-index: 100;
+  position: relative;
+  left: 32%;
+  top: -360px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#hoverText p:first-of-type {
+  text-indent: 8em;
+}
+
 .description strong {
   color: black;
 }
@@ -45,7 +59,7 @@ iframe {
   -webkit-transform:rotate(20deg);
   -o-transform:rotate(20deg);
   -ms-transform:rotate(20deg); */
-  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2);
+  /* filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=.2); */
   } 
 
 /* .playerContainer {
@@ -87,7 +101,7 @@ Container strong {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 10px;
   margin-bottom: 5px;
   /* border: 1px solid green; */
 }

@@ -171,10 +171,9 @@ const Video = ({ videoSrcURL, videoTitle, ...props }) => (
 )
 
 const PitchCard = styled.div`
-  width: 700px;
+  width: 800px;
   height: 100%;
   ${'' /* border: 1px solid black; */}
-  
   color: black;
   background-color: rgba(233, 230, 230);
   overflow: scroll;
@@ -182,7 +181,6 @@ const PitchCard = styled.div`
   border-bottom: 1px solid rgba(0,0,0,.4);
   box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.75);
   padding: 10px;
-
 `
 
 export default ({ data }) => {
@@ -203,31 +201,41 @@ export default ({ data }) => {
       <div id="pitchCardContainer">
         <PitchCard id="pitchCard" >
           <h1>The Future Matters More Than Anything Else</h1>
-          <p>The Earth is estimated to continue to remain habitable for hundreds of millions of years, without conditioning on anthropogenic factors. We may die out long before that point, but if there’s a chance of making it, then more people will live in the future than are alive today by an unenumerable order of magnitude (when considering the size of our cosmic endowment).</p>
-          <p>If each generation lasts for 100 years, then over the course of 100 million years there could be one million future generations.</p>
-          <p>This is such a big number that any problem that affects future generations potentially has a far greater scale than one that only affects the present in terms of expected value –- it could affect one million times more people, and all the art, science and culture that they will create. Again -- Problems that affect future generations are potentially the largest in scale and the most neglected.</p>
-          <p>The future could be amazing beyond comprehension. In only the last few generations, humanity has gained the power to destroy itself fully. Extreme technogenic risks will continue to arise and decentralize and we continue to gain power. Whether our wisdom and governance systems will advance in response is a mutable unknown. While life might seem like business as usual, if you really take the time to contextualize yourself in anthropological history, you'll realize that we live in a narrow band of time of baffling import to our future as a species.</p>
+          <p>The Earth is estimated to continue to remain habitable for hundreds of millions of years, without conditioning on anthropogenic factors. We may die out long before that point, but if there’s a chance of making it, then more people will live in the future than are alive today by an unenumerable order of magnitude.</p>
+          <p>If each generation lasts for 100 years, then over the course of 100 million years there could be one million future generations. This doesn't even begin to consider the carrying capacity of our cosmic endowment </p>
+          <p>This is such a big number that any problem that affects future generations potentially has a far greater scale than one that only affects the present in terms of expected value –- it could affect one million times more people, and all the art, science and culture that they will create. Again -- Problems that affect future generations are potentially the largest in scale and the most neglected. We have the incredible honor of being born during this pivotal time, and I feel that we have a responsibility to future generations to protect against tail risks, no matter how improbable.</p>
+          <p>The future could be amazing beyond comprehension. However, in only the last few generations, humanity has gained the power to destroy itself fully. Extreme technogenic risks will continue to arise and decentralize as we continue to gain power. Whether our wisdom and governance systems will advance in response is a mutable unknown. While life in 2019 might seem like business as usual, if you really take the time to contextualize yourself in anthropological history, you'll realize that we live in a narrow band of time of baffling import to our future as a species. </p>
           <p>If you want to learn more about how you can make the greatest impact on the world's most difficult problems, check out the links below to get started reading about Long-Term Effective Altruism. The world is full not only of neglected, high-leverage, and tractable problems, but also companions willing to go out of their way to help you towards contributing toward attaining our shared goal.</p>
           <p id='quote'>“In the next century, we will be inventing radical new technologies - machine intelligence, perhaps nanotech, great advances in synthetic biology and other things we haven't even thought of yet. And those new powers will unlock wonderful opportunities, but they might also bring with them certain risks. And we have no track record of surviving those risks. So if there are big existential risks, I think they are going to come from our own activities and mostly from our own inventiveness and creativity.”</p>
           <p id='attribution'> - Nick Bostrom, Future of Humanity Institute</p>
-          <h4>Getting Started</h4>
-          <ul>
-            <li><a href="https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxuYmVja3N0ZWFkfGd4OjExNDBjZTcwNjMxMzRmZGE">On the Overwhelming Importance of Shaping the Far Future</a></li>
-            <li><a href="https://80000hours.org/career-guide/">80,000 Hours Career Guide</a></li>
-            <li><a href="https://www.effectivealtruism.org/articles/cause-profile-long-run-future/">The Long Run Future</a></li>
-            <li><a href="https://80000hours.org/career-guide/world-problems/#why-focusing-on-future-generations-can-be-even-more-effective-than-tackling-global-health">The World's Biggest Problems</a></li>
-            <li><a href="https://www.effectivealtruism.org/articles/cause-profile-long-run-future/">Podcast: Why the Long Term matters more than Anything Else</a></li>
-            <li><a href="https://80000hours.org/articles/future-generations/">The Long Term Value Thesis</a></li>
-            <li><a href="https://80000hours.org/articles/extinction-risk/">The Case for Reducing Extinction Risk</a></li>
-            <li><a href="https://docs.google.com/document/d/1NdlBbOodrBCL9KB2WFFMfIGQaYV3vvA6wD4qh3u7pgc/edit#">Big History and Big Future</a></li>
-            <li><a href="https://docs.google.com/document/d/10DhORpdeoLHdygISziFIhZZxLVdwjxT_xFXcQtGDFQ4/edit#">Risks and Threats</a></li>
-            <li><a href="https://docs.google.com/document/d/1R_8EILI3OSVijlavnafaM9nYIyv977SZVJDDDfsXk6M/edit#">Existential Hope</a></li>
-            <li><a href="https://www.effectivealtruism.org/articles/cause-profile-long-run-future/">Podcast: Why the Long Term matters more than Anything Else</a></li>
-          </ul>
-          <h4>Other Links:</h4>
-          <ul>
-            <li><a href="https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxuYmVja3N0ZWFkfGd4OjExNDBjZTcwNjMxMzRmZGE">Links to Orgs (LW, CFAR, FHI, 80k, ETC.)</a></li>
-          </ul>
+          <div id="linkContainer">
+            <h4>Getting Started</h4>
+            <ul>
+              <li><a href="https://docs.google.com/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxuYmVja3N0ZWFkfGd4OjExNDBjZTcwNjMxMzRmZGE">On the Overwhelming Importance of Shaping the Far Future</a></li>
+              <li><a href="https://80000hours.org/career-guide/">80,000 Hours Career Guide</a></li>
+              <li><a href="https://www.effectivealtruism.org/articles/cause-profile-long-run-future/">The Long Run Future</a></li>
+              <li><a href="https://80000hours.org/career-guide/world-problems/#why-focusing-on-future-generations-can-be-even-more-effective-than-tackling-global-health">The World's Biggest Problems</a></li>
+              <li><a href="https://www.effectivealtruism.org/articles/cause-profile-long-run-future/">Podcast: Why the Long Term matters more than Anything Else</a></li>
+              <li><a href="https://80000hours.org/articles/future-generations/">The Long Term Value Thesis</a></li>
+              <li><a href="https://80000hours.org/articles/extinction-risk/">The Case for Reducing Extinction Risk</a></li>
+              <li><a href="https://docs.google.com/document/d/1NdlBbOodrBCL9KB2WFFMfIGQaYV3vvA6wD4qh3u7pgc/edit#">Big History and Big Future</a></li>
+              <li><a href="https://docs.google.com/document/d/10DhORpdeoLHdygISziFIhZZxLVdwjxT_xFXcQtGDFQ4/edit#">Risks and Threats</a></li>
+              <li><a href="https://docs.google.com/document/d/1R_8EILI3OSVijlavnafaM9nYIyv977SZVJDDDfsXk6M/edit#">Existential Hope</a></li>
+              <li><a href="https://www.effectivealtruism.org/articles/cause-profile-long-run-future/">Podcast: Why the Long Term matters more than Anything Else</a></li>
+              <li><a href="http://mindingourway.com/on-caring/">Nate Soares: On Caring</a></li>
+            </ul>
+            <h4>Other Links</h4>
+            <ul>
+              <li><a href="https://www.fhi.ox.ac.uk/">Future of Humanity Institute (Oxford)</a></li>
+              <li><a href="https://www.cser.ac.uk/">Center for the Study of Existential Risk (Cambridge)</a></li>
+              <li><a href="https://existence.org/">Berkeley Existential Risk Inititative (UCB)</a></li>
+              <li><a href="http://longnow.org/">The Long Now Foundation</a></li>
+              <li><a href="https://www.effectivealtruism.org/">Effective Altruism</a></li>
+              <li><a href="https://www.rationality.org/">Center for Applied Rationality</a></li>
+
+            </ul>
+          </div>
+
         </PitchCard>
       </div>
       <div id="bostromContainer">

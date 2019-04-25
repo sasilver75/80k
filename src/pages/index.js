@@ -3,6 +3,8 @@ import styled from "styled-components"
 // import YouTube from 'react-youtube';
 // import { Player } from 'video-react';
 import { graphql } from "gatsby";
+import Particles from 'react-particles-js';
+
 
 
 import "../styles/scrollbar.css"
@@ -25,15 +27,16 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 100%;
   grid-template-columns: 40% 60%;
-  box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.75);
-  box-shadow: 8px 8px 16px rgba(50,50,93,.3), 0 2px 6px rgba(0,0,0,.22);
+  ${'' /* box-shadow: 11px 10px 8px -7px rgba(255,255,255,0.85); */}
+  box-shadow: 8px 8px 16px rgba(255,255,255,.3), 0 2px 6px rgba(255,255,255,.32);
   transition: all .15s ease;
   border-radius: 5px;
   margin: 15px 5px;
+  background-color: #F5FBFC;
 
   &:hover {
     transform: translateY(-3px);
-    box-shadow: 14px 14px 28px rgba(50,50,93,.3), 0 6px 9px rgba(0,0,0,.22);
+    box-shadow: 16px 16px 28px rgba(255,255,255,.3), 0 6px 9px rgba(255,255,255,.32);
   }
 `
 
@@ -178,7 +181,7 @@ const PitchCard = styled.div`
   overflow: scroll;
   border-right: 1px solid rgba(0,0,0,.4);
   border-bottom: 1px solid rgba(0,0,0,.4);
-  box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.75);
+  box-shadow: 11px 10px 8px -7px rgba(255,255,255,.3);
   padding: 10px;
   border-radius: 10px;
 `
@@ -189,8 +192,54 @@ export default ({ data }) => {
     return Card(elt.node)
   });
 
+  // "#3CA9D1"
   return (
     <div>
+      <Particles
+        id="myParticles"
+        params={{
+          "particles": {
+            "number": {
+              "value": 180,
+              "density": {
+                "enable": true,
+                "value_area": 1500
+              }
+            },
+            "line_linked": {
+              "enable": true,
+              "opacity": 0.05
+            },
+            "move": {
+              "direction": "right",
+              "speed": 0.4
+            },
+            "size": {
+              "value": 1
+            },
+            "opacity": {
+              "anim": {
+                "enable": true,
+                "speed": 1,
+                "opacity_min": 0.3
+              }
+            }
+          },
+          "interactivity": {
+            "events": {
+              "onclick": {
+                "enable": true,
+                "mode": "push"
+              }
+            },
+            "modes": {
+              "push": {
+                "particles_nb": 1
+              }
+            }
+          },
+          "retina_detect": true
+        }} />
       <Video
         // https://player.vimeo.com/video/290952236
         // https://player.vimeo.com/video/302734559 ... #t=15s

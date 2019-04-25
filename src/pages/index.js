@@ -174,6 +174,7 @@ const PitchCard = styled.div`
   ${'' /* border: 1px solid black; */}
   color: black;
   background-color: rgba(233, 230, 230);
+  ${'' /* background-color: #f0ead6; */}
   overflow: scroll;
   border-right: 1px solid rgba(0,0,0,.4);
   border-bottom: 1px solid rgba(0,0,0,.4);

@@ -3,6 +3,8 @@ import styled from "styled-components"
 // import YouTube from 'react-youtube';
 // import { Player } from 'video-react';
 import { graphql } from "gatsby";
+import { ChevronRight } from 'styled-icons/boxicons-regular/ChevronRight'
+
 
 import "../styles/scrollbar.css"
 import "../styles/index.css"
@@ -38,7 +40,7 @@ One of the most important problems they solve is selector name collisions. With 
 const FakeBody = styled.div`
   width: 100%;
   height: 100%;
-  border: 1px solid red;
+  ${'' /* border: 1px solid red; */}
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -48,12 +50,20 @@ const FakeBody = styled.div`
 const Container = styled.div`
   width: 600px;
   height: 200px;
-  border: 2px solid black;
+  border: 1px solid black;
   display: grid;
   grid-template-rows: 100%;
   grid-template-columns: 40% 60%;
   box-shadow: 11px 10px 8px -7px rgba(0,0,0,0.75);
+  box-shadow: 8px 8px 16px rgba(50,50,93,.3), 0 2px 6px rgba(0,0,0,.22);
+  transition: all .15s ease;
+
   margin: 15px 0px;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 14px 14px 28px rgba(50,50,93,.3), 0 6px 9px rgba(0,0,0,.22);
+  }
 `
 
 const OrgImgContainer = styled.div`
@@ -73,13 +83,15 @@ const OrgImg = styled.img`
   ${'' /* border: 1px solid cyan; */}
   grid-row: 1 / 1;
   grid-column: 1 / 1;
-  border-right: 1px solid rgba(0,0,0,.5);
+  border-right: 1px solid rgba(0,0,0,.4);
+  border-bottom: 1px solid rgba(0,0,0,.4);
   box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
 
 
 `
 
 const Description = styled.div`
+  background: rgba(20,20,20,.01);
   width: 100%;
   height: 100%;
   padding: 5px;
@@ -88,9 +100,7 @@ const Description = styled.div`
   grid-column: 2 / 2;
   overflow: scroll;
   box-sizing: border-box;
-  ${'' /* &:hover {
-    background-color: rgba(50, 163, 250, 0.2);
-  } */}
+  
   &::-webkit-scrollbar-thumb
   {
     border-radius: 10px;
@@ -120,42 +130,84 @@ const Description = styled.div`
 `
 
 const Info = styled.p`
-  
+  ${'' /* Nothing here now */}
 `
 
+const Chevron = styled.p`
+  color: #2ab0ed;
+  height: 20px;
+  width: 20px;
+`
+
+// NEW
+const Card = (props) => {
+
+  // Manipulate the data to extract...
+
+  return (
+    <Container>
+      <OrgImgContainer>
+        <OrgImg src={props["image"]}></OrgImg>
+      </OrgImgContainer>
+      <Description className='description'>
+        <Info>
+          <strong>Position Title:</strong>
+          <br></br>
+          {props["jobName"]}
+        </Info>
+        <Info>
+          <strong>Organization:</strong>
+          <br></br>
+          {props["orgName"]}
+        </Info>
+        <Info>
+          <strong>Position Description:</strong>
+          <br></br>
+          {props["jobDescription"]}
+        </Info>
+        <Info>
+          <strong>Organization Description:</strong>
+          <br></br>
+          {props["orgDescription"]}
+        </Info>
+      </Description>
+    </Container >
+  )
+}
 
 
-const Card = ({ data }) => (
-  <Container>
-    <OrgImgContainer>
-      <OrgImg src={props.image}></OrgImg>
-    </OrgImgContainer>
-    <Description className='description'>
-      <Info>
-        <strong>Position Title:</strong>
-        <br></br>
-        {props.jobName}
-      </Info>
-      <Info>
-        <strong>Organization:</strong>
-        <br></br>
-        {props.orgName}
-      </Info>
-      <Info>
-        <strong>Position Description:</strong>
-        <br></br>
-        {props.jobDescription}
-      </Info>
-      <Info>
-        <strong>Organization Description:</strong>
-        <br></br>
-        {props.orgDescription}
-      </Info>
-    </Description>
-  </Container>
-)
+// OLD
+// const Card = (props) => (
+//   <Container>
+//     <OrgImgContainer>
+//       <OrgImg src={props.image}></OrgImg>
+//     </OrgImgContainer>
+//     <Description className='description'>
+//       <Info>
+//         <strong>Position Title:</strong>
+//         <br></br>
+//         {props.jobName}
+//       </Info>
+//       <Info>
+//         <strong>Organization:</strong>
+//         <br></br>
+//         {props.orgName}
+//       </Info>
+//       <Info>
+//         <strong>Position Description:</strong>
+//         <br></br>
+//         {props.jobDescription}
+//       </Info>
+//       <Info>
+//         <strong>Organization Description:</strong>
+//         <br></br>
+//         {props.orgDescription}
+//       </Info>
+//     </Description>
+//   </Container >
+// )
 
-// May be "query allJobsJson"
+
 export const query = graphql`
 {
   allJobsJson {
@@ -173,14 +225,24 @@ export const query = graphql`
 `
 
 
-
-const Video = props => (
-  <div id="videoDiv">
-    <video id="video">
-      <source src="../static/Orbit.mp4" type="video/mp4"></source>
-    </video>
+const Video = ({ videoSrcURL, videoTitle, ...props }) => (
+  <div className="myVideo">
+    <iframe
+      className="myIframe"
+      src={videoSrcURL}
+      title={videoTitle}
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      frameBorder="0"
+      // webkitallowfullscreen="true"
+      // mozallowfullscreen="true"
+      // allowFullScreen
+      width='100%'
+      height='100%'
+    />
   </div>
 )
+
+
 
 const fakeProps = {
   "image": "https://80000hours.org/wp-content/uploads/2019/04/google.jpg",
@@ -214,31 +276,27 @@ const fakeProps4 = {
 
 
 
-export default () => (
-  <div>
-    <Video></Video>
+export default ({ data }) => {
 
-    <FakeBody>
-      <Card {...fakeProps}></Card>
-      <Card {...fakeProps2}></Card>
-      <Card {...fakeProps3}></Card>
-      <Card {...fakeProps4}></Card>
-    </FakeBody>
-  </div>
-)
+  const cardArray = data.allJobsJson.edges.map(elt => {
+    return Card(elt.node)
+  });
+
+  return (
+    <div>
+      <Video
+        // videoSrcURL="https://www.youtube.com/embed/Xjs6fnpPWy4?autoplay=1&showinfo=0&controls=0&modestbranding=1&autohide=1"
+        videoSrcURL='https://player.vimeo.com/video/302734559?title=0&byline=0&portrait=0&sidedock=0&autoplay=1&loop=1#t=15s'
+        videoTitle="Orbit"
+      />
+      <FakeBody>
+        {cardArray}
+      </FakeBody>
+    </div>
+  )
+}
 
 
 
 
 
-       // ----------------
-
-      // export default () => (
-//   <div style={{ color: `purple` }}>
-//     <div>
-
-//     </div>
-//     <p>Hello, World!</p>
-//     <img src="https://source.unsplash.com/random/400x200" alt="" />
-//   </div>
-// )

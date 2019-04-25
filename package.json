@@ -22,6 +22,7 @@
     "react-dom": "^16.8.6",
     "react-youtube": "^7.9.0",
     "styled-components": "^4.2.0",
+    "styled-icons": "^7.10.0",
     "video-react": "^0.13.6"
   },
   "devDependencies": {

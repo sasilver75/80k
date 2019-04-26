@@ -39,7 +39,7 @@ canvas {
 }
 
 #hoverText p:first-of-type {
-  text-indent: 8em;
+  text-indent: 2.5em;
 }
 
 .description strong {

@@ -200,10 +200,10 @@ export default ({ data }) => {
         params={{
           "particles": {
             "number": {
-              "value": 180,
+              "value": 300,
               "density": {
                 "enable": true,
-                "value_area": 1500
+                "value_area": 1800
               }
             },
             "line_linked": {
@@ -249,10 +249,10 @@ export default ({ data }) => {
       />
       <p id="hoverText">
         <p>
-          The Future needs Your Help.
+          You have about 80,000 working hours in your career.
         </p>
         <p>
-          Spend your Career working on the World's most Pressing Problems.
+          Spend them working on the World's most pressing problems.
         </p>
       </p>
 
